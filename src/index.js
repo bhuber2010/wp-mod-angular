@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import {hello} from './app/hello';
+import {hello, random} from './components';
 import 'angular-ui-router';
 import routesConfig from './routes';
 
@@ -11,4 +11,5 @@ export const app = 'app';
 angular
   .module(app, ['ui.router'])
   .config(routesConfig)
-  .component('app', hello);
+  .component('hello', hello)
+  .component('random', random)
