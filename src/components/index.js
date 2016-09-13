@@ -1,2 +1,4 @@
-export const hello = require('../app/hello').hello
-export const random = require('./random/random').random
+import { hello } from '../app/hello'
+import { random } from './random/random'
+
+export { hello, random }
