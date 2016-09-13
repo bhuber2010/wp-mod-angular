@@ -16,7 +16,26 @@ class DogsModel {
   }
 }
 
-const DogsModule = angular.module('Dogs', [])
+class DogController {
+  constructor(DogsModel) {
+    this.newDog = null
+    this.DogsModel = DogsModel
+  }
+  addDog() {
+    this.DogsModel.addDog.call(this.DogsModel, this.newDog)
+  }
+}
+
+const AddDog = {
+  template: `<form ng-submit="$ctrl.addDog()">
+    <input type="text" ng-model="$ctrl.newDog" />
+    <button type="submit">Add Dog</button>
+    </form>`,
+  controller: DogController
+}
+
+const DogsModule = angular.module('DogsModule', [])
   .service('DogsModel', DogsModel)
+  .component('addDog', AddDog)
 
 export default DogsModule
