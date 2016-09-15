@@ -2,7 +2,7 @@ class RandomController {
   constructor(DogsModel) {
     this.text = 'My brand new component!';
     this.dogs = DogsModel.dogs;
-  
+
   }
 }
 
